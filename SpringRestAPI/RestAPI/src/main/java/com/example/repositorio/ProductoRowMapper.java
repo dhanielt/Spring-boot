@@ -18,7 +18,6 @@ public  class ProductoRowMapper implements RowMapper<Producto>  {
 
         Producto producto = new Producto();
         producto.setIdProducto(Integer.valueOf(rs.getString("idProducto")));
-        producto.setIdCliente(Integer.valueOf(rs.getString("idCliente")));
         producto.setNombre(rs.getString("nombre"));
         producto.setPrecio(Integer.valueOf(rs.getString("precio")));
         return producto;

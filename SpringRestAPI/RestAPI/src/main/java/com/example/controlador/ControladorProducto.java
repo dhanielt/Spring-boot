@@ -47,7 +47,7 @@ public class ControladorProducto {
 
     @GetMapping("/misproductos")
     @ResponseBody
-    public List<Producto> misClientesRegistrados() {
+    public List<Producto> misProductosRegistrados() {
 
         return productosRegistrados.listaProductosRegistrados();
     }

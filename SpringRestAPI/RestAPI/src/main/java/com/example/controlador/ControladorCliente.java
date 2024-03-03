@@ -18,19 +18,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @RestController
-@RequestMapping("/gestion")
+@RequestMapping("/gestiones")
 public class ControladorCliente {
   
   @Autowired
-  private ClientesRegistrados clientesRegistrados;      
-
+  private ClientesRegistrados clientesRegistrados;
   
   @GetMapping("/clientes/{id}")
   public Cliente buscarCliente(@PathVariable Integer id) {
     
       return this.clientesRegistrados.buscarCliente(id);
   }
-  
+
   @GetMapping("/clientes")
   public List<Cliente> clientesRegistrados() {
       
@@ -51,7 +50,7 @@ public class ControladorCliente {
     return cliente;
   }
   
-  @PutMapping("/actualizar/{id}")  
+  @PutMapping("/clientes/{id}")
   public  ResponseEntity<String> actualizarCliente(@RequestBody Cliente cliente, @PathVariable Integer id) {
       
     if (this.clientesRegistrados.actualizarInformacionCliente(cliente, id))          
@@ -61,7 +60,7 @@ public class ControladorCliente {
     
   }
   
-  @DeleteMapping("/remover/{id}")
+  @DeleteMapping("/clientes/{id}")
   public ResponseEntity<String> removerEmpleado(@PathVariable Integer id) {
     if (this.clientesRegistrados.eliminarInformacionCliente(id))          
         return ResponseEntity.ok("Cliente eliminado correctamente");

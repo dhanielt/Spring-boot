@@ -6,13 +6,11 @@ import org.springframework.stereotype.Component;
 public class Producto {
 
     private Integer idProducto;
-    private Integer idCliente;
     private String nombre;
     private Integer precio;
 
 
     public Producto() {
-        this.idCliente = 0;
         this.idProducto = 0;
         this.nombre = "--";
         this.precio = 0;
@@ -20,15 +18,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "idCliente=" + idCliente + ", idProducto=" + idProducto + ", nombre=" + nombre + ", precio=" + precio + '}';
-    }
-
-    public Integer getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+        return "Producto{" + "idProducto=" + idProducto + ", nombre=" + nombre + ", precio=" + precio + '}';
     }
 
     public Integer getIdProducto() {

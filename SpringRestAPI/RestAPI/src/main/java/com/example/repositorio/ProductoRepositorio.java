@@ -34,14 +34,14 @@ public class ProductoRepositorio {
 
     public int insertar(Producto producto) {
 
-        return jdbcTemplate.update("insert into producto (idProducto, idCliente, nombre, precio) " + "values(?, ?, ?, ?)",
-                producto.getIdProducto(), producto.getIdCliente(), producto.getNombre(), producto.getPrecio());
+        return jdbcTemplate.update("insert into producto (idProducto, nombre, precio) " + "values(?, ?, ?, ?)",
+                producto.getIdProducto(), producto.getNombre(), producto.getPrecio());
     }
 
     public int actualizar(Producto producto) {
 
-        return jdbcTemplate.update("update producto " + " set idCliente = ?, nombre = ?, precio = ? " + " where idProducto = ?",
-                producto.getIdCliente(), producto.getNombre(), producto.getPrecio(),producto.getIdProducto());
+        return jdbcTemplate.update("update producto " + " nombre = ?, precio = ? " + " where idProducto = ?",
+                producto.getNombre(), producto.getPrecio(),producto.getIdProducto());
     }
 
 }
